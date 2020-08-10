@@ -1,0 +1,90 @@
+.container {
+  border: 2px solid rgba(136, 128, 128, 0.164);
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 30px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  background-color: #fff;
+}
+.buttons .active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+}
+.buttons .active:hover {
+  text-decoration: none;
+}
+.celsiusButton:active {
+  font-weight: bold;
+}
+.tipMessage {
+  text-align: center;
+}
+.tempNow {
+  font-size: 50px;
+  display: block;
+  position: relative;
+  line-height: 30px;
+}
+.weatherDescription {
+  line-height: 20px;
+  font-style: italic;
+  margin-top: 0;
+  font-size: 16px;
+}
+.collapseButton {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  background-color: #27496d;
+  border-radius: 50%;
+}
+.weatherIcon {
+  display: block;
+  position: absolute;
+  margin-left: 20px;
+}
+.todayInfo {
+  text-align: right;
+  margin-top: 30px;
+  font-size: 18px;
+}
+.tempMaxMin {
+  font-size: 12px;
+}
+.tip {
+  font-size: 15px;
+}
+.additionalInfo {
+  font-size: 15px;
+  text-align: center;
+  height: 45px;
+}
+.localizationButton,
+.submitIcon {
+  border: none;
+  background-color: transparent;
+}
+.inputCity {
+  width: 120px;
+  border: none;
+  background-color: rgba(136, 128, 128, 0.164);
+  text-align: center;
+}
+.menu {
+  margin-top: 20px;
+}
+.cityName {
+  font-size: 50px;
+  color: #142850;
+}
+.country {
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  line-height: 10px;
+  color: #142850;
+}
+.city {
+  margin-top: 20px;
+}
