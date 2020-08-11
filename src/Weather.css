@@ -1,11 +1,12 @@
-.container {
+.infoWeather {
   border: 2px solid rgba(136, 128, 128, 0.164);
   width: 300px;
   margin: 0 auto;
-  margin-top: 30px;
+  margin-top: 20px;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   background-color: #fff;
+  padding: 0 18px;
 }
 .buttons .active {
   color: rgb(33, 33, 33);

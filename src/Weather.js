@@ -24,7 +24,7 @@ export default function Weather() {
 
     return (
         <div className='mainContainer'>
-            <div className='container'>
+            <div className='infoWeather'>
                 <div className='menu'>
 
                     <div className="row">
@@ -140,7 +140,8 @@ export default function Weather() {
                             data-toggle="collapse"
                             data-target="#forecast"
                             aria-expanded="false"
-                            aria-controls="forecast">
+                            aria-controls="forecast"
+                        >
                             <i className="fas fa-angle-down" />
                         </button>
                     </div>
