@@ -1,11 +1,11 @@
 .infoWeather {
-  border: 2px solid rgba(136, 128, 128, 0.164);
+  border: 2px solid transparent;
   width: 300px;
   margin: 0 auto;
   margin-top: 20px;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
-  background-color: #fff;
+  background-color: rgb(99, 228, 185);
   padding: 0 15px;
 }
 .localizationButton,

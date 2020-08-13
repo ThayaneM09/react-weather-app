@@ -1,5 +1,6 @@
 import React from 'react';
 import FormattedDate from './FormattedDate';
+import WeatherIcon from './WeatherIcon';
 import './WeatherInfo.css';
 
 export default function WeatherInfo(props) {
@@ -39,12 +40,15 @@ export default function WeatherInfo(props) {
 
                     <div className="row">
                         <div className="col">
-                            <p className="day"><FormattedDate date={props.data.date} /></p>
+                            <p className="day">
+                                <FormattedDate date={props.data.date} /></p>
                         </div>
                     </div>
                     <div className="row">
                         <div className="col">
-                            <img src={props.data.iconUrl} className="weatherIcon" width="100px" alt={props.data.description} />
+                            <div className='weathericon'>
+                                <WeatherIcon code={props.data.icon} />
+                            </div>
                         </div>
                         <div className="col">
                             <p className="weatherDescription">{props.data.description}</p>
@@ -100,7 +104,7 @@ export default function WeatherInfo(props) {
                     </button>
                 </div>
             </div >
-            <small className='openSourceLink'><a href='https://github.com/ThayaneM09/react-weather-app'>Open-source code</a> by Thayane Marcelino</small>
+
         </div >
     );
 

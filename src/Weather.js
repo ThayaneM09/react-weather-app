@@ -17,8 +17,7 @@ export default function Weather(props) {
             wind: response.data.wind.speed,
             city: response.data.name,
             country: response.data.sys.country,
-            humidity: response.data.main.humidity,
-            iconUrl: '',
+            icon: response.data.weather[0].icon,
             description: response.data.weather[0].description,
             date: new Date(response.data.dt * 1000)
         });
@@ -73,6 +72,7 @@ export default function Weather(props) {
 
                     <WeatherInfo data={weatherData} />
                 </div>
+                <small className='openSourceLink'><a href='https://github.com/ThayaneM09/react-weather-app'>Open-source code</a> by Thayane Marcelino</small>
             </div>
 
         );
