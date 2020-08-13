@@ -1,11 +1,12 @@
 import React, { useState }/*, {useState}*/ from 'react';
 import './Weather.css';
 import axios from 'axios';
-import FormattedDate from './FormattedDate';
+import WeatherInfo from './WeatherInfo';
 
 export default function Weather(props) {
 
     const [weatherData, setWeatherData] = useState({ ready: false });
+    const [city, setCity] = useState(props.defaultCity);
 
     function displayWeather(response) {
 
@@ -22,6 +23,21 @@ export default function Weather(props) {
             date: new Date(response.data.dt * 1000)
         });
     }
+    function search() {
+        let apiKey = '9f983349ddb8c26dfc6cae681695c977';
+        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+        axios.get(apiUrl).then(displayWeather);
+    }
+    function handleSubmit(event) {
+        event.preventDefault();
+        search();
+
+
+    }
+    function handleCityChange(event) {
+        setCity(event.target.value);
+
+    }
 
     if (weatherData.ready) {
         return (
@@ -37,13 +53,14 @@ export default function Weather(props) {
                             </div>
 
                             <div className="col-9">
-                                <form className="formTypeCity">
+                                <form className="formTypeCity" onSubmit={handleSubmit}>
                                     <input
                                         type="search"
                                         name="city"
                                         placeholder="Enter a city..."
                                         autocomplete="off"
                                         className="inputCity"
+                                        onChange={handleCityChange}
                                     />
                                     {" "}
                                     <button type="submit" className="submitIcon">
@@ -54,109 +71,13 @@ export default function Weather(props) {
                         </div>
                     </div>
 
-                    <div className='city'>
-                        <div className="row">
-                            <div className="col">
-                                <h1 className="cityName">{weatherData.city}</h1>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col">
-                                <h2 className="country">{weatherData.country}</h2>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className='weather'>
-                        <div className='todayInfo'>
-                            <div className="row">
-                                <div className="col">
-                                    <p className="buttons">
-                                        <span>
-                                            <a href="/" className="active">
-                                                ºC{' '}
-                                            </a>
-                                        </span>|
-                                    <span>
-                                            <a href="/" className="fahreinheitButton">
-                                                {' '}ºF
-                                        </a>
-                                        </span>
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className="row">
-                                <div className="col">
-                                    <p className="day"><FormattedDate date={weatherData.date} /></p>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="col">
-                                    <img src={weatherData.iconUrl} className="weatherIcon" width="100px" alt={weatherData.description} />
-                                </div>
-                                <div className="col">
-                                    <p className="weatherDescription">{weatherData.description}</p>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="col">
-                                    <p className="tempNow">
-                                        <span className='temperatureValue'>{Math.round(weatherData.tempNow)}</span>ºC
-                                </p>
-                                </div>
-                            </div>
-
-                            <div className="row">
-                                <div className="col">
-                                    <p className="tempMinToday"><span className='tempMin'>{Math.round(weatherData.tempMin)}</span>ºC
-                            </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="row additionalInfo">
-                            <div className="col">
-                                <i className="fas fa-wind" title="Wind Speed" />
-                                <p className="windSpeed">{weatherData.wind}</p>
-                            </div>
-                            <div className="col">
-                                <i className="fas fa-cloud-rain" title="Humidity" />
-                                <p className="preciptation">{weatherData.humidity}%</p>
-                            </div>
-                        </div>
-
-                        <hr />
-                        <div className="row">
-                            <div className="col">
-                                <p className="tipMessage">
-                                    <span className="tip">You might need this</span>{' '}
-                                    <i className="fas fa-umbrella" title="Umbrella" />
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="row">
-                            <button
-                                className="btn btn-primary collapseButton"
-                                type="button"
-                                data-toggle="collapse"
-                                data-target="#forecast"
-                                aria-expanded="false"
-                                aria-controls="forecast"
-                            >
-                                <i className="fas fa-angle-down" />
-                            </button>
-                        </div>
-                    </div >
-
+                    <WeatherInfo data={weatherData} />
                 </div>
-                <small className='openSourceLink'><a href='https://github.com/ThayaneM09/react-weather-app'>Open-source code</a> by Thayane Marcelino</small>
-            </div>)
+            </div>
+
+        );
     } else {
-        let apiKey = '9f983349ddb8c26dfc6cae681695c977';
-        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
-        axios.get(apiUrl).then(displayWeather);
+        search();
         return ("Loading...");
     }
 
