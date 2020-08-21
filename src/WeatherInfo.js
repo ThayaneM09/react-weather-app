@@ -46,11 +46,11 @@ export default function WeatherInfo(props) {
 
                 <div className="row additionalInfo">
                     <div className="col">
-                        <i className="fas fa-wind" title="Wind Speed" />
+                        <span className='miniIcons'><i className="fas fa-wind" title="Wind Speed" /></span>
                         <p className="windSpeed">{Math.round(props.data.wind)}Km/h</p>
                     </div>
                     <div className="col">
-                        <i className="fas fa-cloud-rain" title="Humidity" />
+                        <span className='miniIcons'><i className="fas fa-cloud-rain" title="Humidity" /></span>
                         <p className="preciptation">{Math.round(props.data.humidity)}%</p>
                     </div>
                 </div>
