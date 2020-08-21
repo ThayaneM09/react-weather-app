@@ -2,6 +2,7 @@ import React, { useState }/*, {useState}*/ from 'react';
 import './Weather.css';
 import axios from 'axios';
 import WeatherInfo from './WeatherInfo';
+import WeatherForecast from './WeatherForecast';
 
 export default function Weather(props) {
 
@@ -72,6 +73,7 @@ export default function Weather(props) {
                     </div>
 
                     <WeatherInfo data={weatherData} />
+                    <WeatherForecast city={weatherData.city} />
                 </div>
                 <small className='openSourceLink'><a href='https://github.com/ThayaneM09/react-weather-app'>Open-source code</a> by Thayane Marcelino</small>
             </div>
