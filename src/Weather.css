@@ -3,10 +3,10 @@
   width: 300px;
   margin: 0 auto;
   margin-top: 20px;
-  font-family: "Montserrat", sans-serif;
-  font-weight: bold;
-  background-color: rgb(99, 228, 185);
+  font-family: "Lobster", cursive;
+  background-color: rgba(99, 228, 185, 0.418);
   padding: 0 15px;
+  color: #142850;
 }
 .localizationButton,
 .submitIcon {

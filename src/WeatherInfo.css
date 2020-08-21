@@ -22,6 +22,7 @@
   font-style: italic;
   margin-top: 0;
   font-size: 16px;
+  font-weight: 400;
 }
 .collapseButton {
   display: block;
@@ -31,20 +32,21 @@
   border-radius: 50%;
 }
 .weatherIcon {
-  display: block;
+  display: inline-block;
   position: absolute;
   margin-left: 20px;
 }
 .todayInfo {
   text-align: right;
   margin-top: 30px;
-  font-size: 18px;
+  font-size: 20px;
+  line-height: 2px;
 }
 .tempMaxMin {
   font-size: 12px;
 }
 .tip {
-  font-size: 15px;
+  font-size: 20px;
 }
 .additionalInfo {
   font-size: 15px;
@@ -59,17 +61,34 @@
 }
 .cityName {
   font-size: 50px;
-  color: #142850;
 }
 .country {
   display: block;
   text-align: center;
   font-size: 18px;
   line-height: 10px;
-  color: #142850;
 }
 .openSourceLink {
   display: block;
   margin: 0 auto;
   text-align: center;
+}
+.unit {
+  font-size: 18px;
+  font-weight: 400;
+  position: relative;
+  top: -28px;
+}
+.temperatureValue {
+  font-size: 48px;
+}
+.weatherTemperature {
+  line-height: 25px;
+}
+.tempMin {
+  font-size: 20px;
+}
+.windSpeed,
+.preciptation {
+  font-size: 18px;
 }
