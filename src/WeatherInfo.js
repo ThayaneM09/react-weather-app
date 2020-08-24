@@ -54,31 +54,8 @@ export default function WeatherInfo(props) {
                         <p className="preciptation">{Math.round(props.data.humidity)}%</p>
                     </div>
                 </div>
-
                 <hr />
-                <div className="row">
-                    <div className="col">
-                        <p className="tipMessage">
-                            <span className="tip">You might need this</span>{' '}
-                            <i className="fas fa-umbrella" title="Umbrella" />
-                        </p>
-                    </div>
-                </div>
-
-                <div className="row">
-                    <button
-                        className="btn btn-primary collapseButton"
-                        type="button"
-                        data-toggle="collapse"
-                        data-target="#forecast"
-                        aria-expanded="false"
-                        aria-controls="forecast"
-                    >
-                        <i className="fas fa-angle-down" />
-                    </button>
-                </div>
             </div >
-
         </div >
     );
 

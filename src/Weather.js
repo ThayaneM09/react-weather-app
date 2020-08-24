@@ -39,41 +39,35 @@ export default function Weather(props) {
         setCity(event.target.value);
 
     }
+    function showForecast(event) {
+        event.preventDefault();
+        return (<WeatherForecast city={weatherData.city} />);
+    }
 
     if (weatherData.ready) {
         return (
             <div className='mainContainer'>
                 <div className='infoWeather'>
                     <div className='menu'>
+                        <form className="formTypeCity" onSubmit={handleSubmit}>
+                            <input
+                                type="search"
+                                name="city"
+                                placeholder="Enter a city..."
+                                autocomplete="off"
+                                className="inputCity"
+                                onChange={handleCityChange}
+                            />
+                            {" "}
+                            <button type="submit" className="submitIcon">
+                                <i className="fas fa-search" />
+                            </button>
+                        </form>
 
-                        <div className="row">
-                            <div className="col-3">
-                                <button className="localizationButton">
-                                    <i className="fas fa-map-marker-alt" />
-                                </button>
-                            </div>
-
-                            <div className="col-9">
-                                <form className="formTypeCity" onSubmit={handleSubmit}>
-                                    <input
-                                        type="search"
-                                        name="city"
-                                        placeholder="Enter a city..."
-                                        autocomplete="off"
-                                        className="inputCity"
-                                        onChange={handleCityChange}
-                                    />
-                                    {" "}
-                                    <button type="submit" className="submitIcon">
-                                        <i className="fas fa-search" />
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
                     </div>
 
                     <WeatherInfo data={weatherData} />
-                    <WeatherForecast city={weatherData.city} />
+                    <button type='button' onClick={showForecast} className='showMoreButton'>Show more</button>
                 </div>
                 <small className='openSourceLink'><a href='https://github.com/ThayaneM09/react-weather-app'>Open-source code</a> by Thayane Marcelino</small>
             </div>

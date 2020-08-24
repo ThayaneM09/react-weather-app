@@ -4,18 +4,37 @@
   margin: 0 auto;
   margin-top: 20px;
   font-family: "Lobster", cursive;
-  background-color: rgba(99, 228, 185, 0.418);
+  background-color: #f7d1ba;
   padding: 0 15px;
-  color: #142850;
+  color: #056676;
 }
-.localizationButton,
 .submitIcon {
   border: none;
   background-color: transparent;
+  color: #e94560;
 }
 .inputCity {
-  width: 120px;
+  width: 150px;
   border: none;
-  background-color: rgba(136, 128, 128, 0.164);
+  background-color: #fff;
+  color: #e94560;
   text-align: center;
+}
+.showMoreButton {
+  background-color: #f7d1ba;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  color: #056676;
+  border: 1px solid #056676;
+  font-size: 20px;
+}
+.showMoreButton:hover {
+  color: #e94560;
+  border: 1px solid #e94560;
+}
+.menu {
+  display: block;
+  position: relative;
+  margin: 0 auto;
 }

@@ -1,0 +1,10 @@
+.forecastTemperature {
+  font-size: 20px;
+  font-style: italic;
+  color: #e94560;
+}
+.WeatherForecastPreview {
+  display: block;
+  position: relative;
+  text-align: center;
+}

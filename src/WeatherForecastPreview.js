@@ -5,7 +5,7 @@ export default function WeatherForecastPreview(props) {
     function hours() {
         let date = new Date(props.data.dt * 1000);
         let hours = date.getHours();
-        return `${hours}:00`;
+        return `${hours}h`;
     }
 
     function temperature() {
@@ -16,9 +16,9 @@ export default function WeatherForecastPreview(props) {
 
     return (
         <div className="WeatherForecastPreview col">
-            <span> {hours()}
-                <WeatherIcon code={props.data.weather[0].icon} />
-                {temperature()}</span>
+            <span className='forecastHour'>{hours()}</span> {' '}
+            <WeatherIcon code={props.data.weather[0].icon} />
+            <p className='forecastTemperature'>{temperature()}</p>
         </div>
     );
 }
