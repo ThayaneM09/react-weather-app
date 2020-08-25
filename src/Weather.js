@@ -8,6 +8,7 @@ export default function Weather(props) {
 
     const [weatherData, setWeatherData] = useState({ ready: false });
     const [city, setCity] = useState(props.defaultCity);
+    const [showForecast, setShowForecast] = useState(false);
 
     function displayWeather(response) {
         console.log(response);
@@ -39,9 +40,13 @@ export default function Weather(props) {
         setCity(event.target.value);
 
     }
-    function showForecast(event) {
-        event.preventDefault();
-        return (<WeatherForecast city={weatherData.city} />);
+    function handleForecastView(event) {
+        setShowForecast(!showForecast);
+        if (showForecast) {
+            event.target.innerHTML = "Show more";
+        } else {
+            event.target.innerHTML = "Show less";
+        }
     }
 
     if (weatherData.ready) {
@@ -67,7 +72,15 @@ export default function Weather(props) {
                     </div>
 
                     <WeatherInfo data={weatherData} />
-                    <button type='button' onClick={showForecast} className='showMoreButton'>Show more</button>
+                    <button
+                        type="button"
+                        onClick={(e) => handleForecastView(e)}
+                        className="showMoreButton"
+                    >
+                        Show more
+                    </button>
+                    {showForecast ? <WeatherForecast city={weatherData.city} /> : <></>}
+
                 </div>
                 <small className='openSourceLink'><a href='https://github.com/ThayaneM09/react-weather-app'>Open-source code</a> by Thayane Marcelino</small>
             </div>
