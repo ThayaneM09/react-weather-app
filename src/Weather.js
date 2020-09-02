@@ -9,6 +9,7 @@ export default function Weather(props) {
     const [weatherData, setWeatherData] = useState({ ready: false });
     const [city, setCity] = useState(props.defaultCity);
     const [showForecast, setShowForecast] = useState(false);
+    const [units, setUnits] = useState("celsius");
 
     function displayWeather(response) {
         console.log(response);
@@ -33,7 +34,6 @@ export default function Weather(props) {
     function handleSubmit(event) {
         event.preventDefault();
         search();
-
 
     }
     function handleCityChange(event) {
@@ -68,10 +68,9 @@ export default function Weather(props) {
                                 <i className="fas fa-search" />
                             </button>
                         </form>
-
                     </div>
 
-                    <WeatherInfo data={weatherData} />
+                    <WeatherInfo data={weatherData} units={units} setUnits={setUnits} />
                     <button
                         type="button"
                         onClick={(e) => handleForecastView(e)}
@@ -79,10 +78,11 @@ export default function Weather(props) {
                     >
                         Show more
                     </button>
-                    {showForecast ? <WeatherForecast city={weatherData.city} /> : <></>}
+
+                    {showForecast ? <WeatherForecast city={weatherData.city} units={units} /> : <></>}
 
                 </div>
-                <small className='openSourceLink'><a href='https://github.com/ThayaneM09/react-weather-app'>Open-source code</a> by Thayane Marcelino</small>
+                <small className='openSourceLink'><a href='https://github.com/ThayaneM09/react-weather-app'>Open-source code</a> by <a href='https://www.linkedin.com/in/thayane-marcelino-6529a058/'>Thayane Marcelino</a></small>
             </div>
 
         );
@@ -90,7 +90,5 @@ export default function Weather(props) {
         search();
         return ("Loading...");
     }
-
-
 
 }

@@ -4,34 +4,35 @@
   margin: 0 auto;
   margin-top: 20px;
   font-family: "Lobster", cursive;
-  background-color: #f7d1ba;
+  background-color: #fff3af;
   padding: 0 15px;
   color: #056676;
 }
 .submitIcon {
   border: none;
   background-color: transparent;
-  color: #e94560;
+  color: #f65c78;
 }
 .inputCity {
   width: 150px;
   border: none;
-  background-color: #fff;
-  color: #e94560;
+  background-color: rgba(248, 239, 247, 0.192);
+  color: #f65c78;
   text-align: center;
 }
 .showMoreButton {
-  background-color: #f7d1ba;
+  background-color: #056676;
   display: block;
   margin: 0 auto;
   margin-bottom: 15px;
-  color: #056676;
-  border: 1px solid #056676;
+  color: #fff3af;
+  border: 1px solid transparent;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.322);
   font-size: 20px;
 }
 .showMoreButton:hover {
-  color: #e94560;
-  border: 1px solid #e94560;
+  background-color: #f65c78;
+  border: 1px solid #f65c78;
 }
 .menu {
   display: block;

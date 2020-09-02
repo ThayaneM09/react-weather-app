@@ -39,7 +39,7 @@ export default function WeatherInfo(props) {
                             <p className="weatherDescription">{props.data.description}</p>
                         </div>
                     </div>
-                    <WeatherTemperature celsiusNow={props.data.tempNow} celsiusMin={props.data.tempMin} />
+                    <WeatherTemperature celsiusNow={props.data.tempNow} celsiusMin={props.data.tempMin} units={props.units} setUnits={props.setUnits} />
 
                 </div>
 
