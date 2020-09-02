@@ -14,12 +14,12 @@
   color: #f65c78;
 }
 .inputCity {
-  width: 150px;
+  width: 160px;
   border: none;
   background-color: #f65c7831;
   color: #f65c78;
   text-align: center;
-  display: inline-block;
+  margin-left: 15px;
 }
 .showMoreButton {
   background-color: #056676;
@@ -39,4 +39,9 @@
   display: block;
   position: relative;
   margin: 0 auto;
+}
+.formTypeCity {
+  display: block;
+  position: relative;
+  text-align: center;
 }
