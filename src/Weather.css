@@ -16,9 +16,10 @@
 .inputCity {
   width: 150px;
   border: none;
-  background-color: rgba(248, 239, 247, 0.192);
+  background-color: #f65c7831;
   color: #f65c78;
   text-align: center;
+  display: inline-block;
 }
 .showMoreButton {
   background-color: #056676;
